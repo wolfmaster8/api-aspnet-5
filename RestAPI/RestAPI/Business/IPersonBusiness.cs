@@ -1,12 +1,9 @@
 ﻿using RestApi.Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace RestApi.Services
+namespace RestApi.Business
 {
-    public interface IPersonService
+    public interface IPersonBusiness
     {
         Person Create(Person person);
         Person Update(Person person);
