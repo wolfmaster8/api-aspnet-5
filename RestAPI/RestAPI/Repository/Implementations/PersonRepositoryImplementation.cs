@@ -19,8 +19,7 @@ namespace RestApi.Repository.Implementations
 
             return _context.Persons.ToList();
         }
-
-
+        
         public Person FindByID(long id)
         {
             return _context.Persons.SingleOrDefault(p => p.Id.Equals(id));

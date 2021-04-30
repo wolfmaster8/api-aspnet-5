@@ -10,7 +10,6 @@ namespace RestApi.Repository
         List<Person> FindAll();
         Person FindByID(long id);
         void Delete(long id);
-
         bool Exists(long id);
     }
 }
