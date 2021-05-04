@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using RestApi.Model;
 using RestApi.Business;
+using RestApi.Data.VO;
 
 
 namespace RestApi.Controllers
@@ -34,14 +35,14 @@ namespace RestApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Book book)
+        public IActionResult Post([FromBody] BookVO book)
         {
             if (book == null) return BadRequest();
             return Ok(_bookBusiness.Create(book));
         }
 
         [HttpPatch]
-        public IActionResult Patch([FromBody] Book book)
+        public IActionResult Patch([FromBody] BookVO book)
         {
             if (book == null) return BadRequest();
             return Ok(_bookBusiness.Update(book));
