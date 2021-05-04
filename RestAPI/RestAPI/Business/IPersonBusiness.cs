@@ -1,14 +1,14 @@
-﻿using RestApi.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using RestApi.Data.VO;
 
 namespace RestApi.Business
 {
     public interface IPersonBusiness
     {
-        Person Create(Person person);
-        Person Update(Person person);
-        List<Person> FindAll();
-        Person FindByID(long id);
+        PersonVO Create(PersonVO person);
+        PersonVO Update(PersonVO person);
+        List<PersonVO> FindAll();
+        PersonVO FindById(long id);
         void Delete(long id);
     }
 }
