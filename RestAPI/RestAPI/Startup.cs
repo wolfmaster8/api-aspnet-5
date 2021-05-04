@@ -7,11 +7,10 @@ using Microsoft.Extensions.Hosting;
 using RestApi.Business;
 using RestApi.Business.Implementations;
 using RestApi.Model.Context;
-using RestApi.Repository;
-using RestApi.Repository.Implementations;
 using Serilog;
 using System;
 using System.Collections.Generic;
+using RestApi.Repository.Generic;
 
 namespace RestApi
 {
@@ -46,10 +45,10 @@ namespace RestApi
             services.AddApiVersioning();
 
             services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
-            services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
 
             services.AddScoped<IBookBusiness, BookBusinessImplementation>();
-            services.AddScoped<IBookRepository, BookRepositoryImplementation>();
+
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
         }
 

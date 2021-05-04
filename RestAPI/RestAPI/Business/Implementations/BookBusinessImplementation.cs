@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using RestApi.Model;
-using RestApi.Repository;
+using RestApi.Repository.Generic;
 
 namespace RestApi.Business.Implementations
 {
     public class BookBusinessImplementation : IBookBusiness
     {
-        private readonly IBookRepository _repository;
+        private readonly IRepository<Book> _repository;
 
-        public BookBusinessImplementation(IBookRepository repository)
+        public BookBusinessImplementation(IRepository<Book> repository)
         {
             _repository = repository;
         }

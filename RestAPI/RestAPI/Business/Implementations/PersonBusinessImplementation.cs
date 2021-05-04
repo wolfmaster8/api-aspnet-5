@@ -1,13 +1,14 @@
 ﻿using RestApi.Model;
 using RestApi.Repository;
 using System.Collections.Generic;
+using RestApi.Repository.Generic;
 
 namespace RestApi.Business.Implementations
 {
     public class PersonBusinessImplementation : IPersonBusiness
     {
-        private readonly IPersonRepository _repository;
-        public PersonBusinessImplementation(IPersonRepository repository)
+        private readonly IRepository<Person> _repository;
+        public PersonBusinessImplementation(IRepository<Person> repository)
         {
             _repository = repository;
         }
@@ -21,7 +22,7 @@ namespace RestApi.Business.Implementations
 
         public Person FindByID(long id)
         {
-            return _repository.FindByID(id);
+            return _repository.FindById(id);
         }
 
         public Person Update(Person person)
