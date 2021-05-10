@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using RestApi.Model;
 using RestApi.Business;
 using RestApi.Data.VO;
 
